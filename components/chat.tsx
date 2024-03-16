@@ -58,14 +58,10 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
   return (
     <>
       <div className={cn('pb-[200px] pt-4 md:pt-10', className)}>
-        {messages.length ? (
-          <>
-            <ChatList messages={messages} />
-            <ChatScrollAnchor trackVisibility={isLoading} />
-          </>
-        ) : (
-          <EmptyScreen setInput={setInput} />
-        )}
+        <>
+          <ChatList messages={messages} />
+          <ChatScrollAnchor trackVisibility={isLoading} />
+        </>
       </div>
       <ChatPanel id={id} input={input} setInput={setInput} />
     </>
